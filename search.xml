@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title>Categories</title>
+      <link href="/2023/04/14/category/"/>
+      <url>/2023/04/14/category/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Graduate Courses, Projects, Readings </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/04/14/Week4%20-%20Finance%20and%20Trading/"/>
+      <url>/2023/04/14/Week4%20-%20Finance%20and%20Trading/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Week4-Finance-and-Trading"><a href="#Week4-Finance-and-Trading" class="headerlink" title="Week4 - Finance and Trading"></a>Week4 - Finance and Trading</h2><blockquote><p><strong>Goal:</strong></p><p>With the knowledge of finance and advanced python programming skills, design a trading system that is able to make decisions based on real-time data streamed from the exchange.</p></blockquote><ul><li><h4 id="Brief-Finance-Introduction"><a href="#Brief-Finance-Introduction" class="headerlink" title="Brief Finance Introduction"></a>Brief Finance Introduction</h4><p><strong>Captital</strong></p><ol><li><h2 id="Debit-Capital"><a href="#Debit-Capital" class="headerlink" title="Debit Capital"></a>Debit Capital</h2></li><li><p>Equity Captial</p></li><li><p>Financing(融资)</p></li></ol></li><li><h4 id="Regulations"><a href="#Regulations" class="headerlink" title="Regulations"></a>Regulations</h4></li><li><h4 id="Trading-Instruments"><a href="#Trading-Instruments" class="headerlink" title="Trading Instruments"></a>Trading Instruments</h4></li><li><h4 id="Exchange-and-Trading-Systems"><a href="#Exchange-and-Trading-Systems" class="headerlink" title="Exchange and Trading Systems"></a>Exchange and Trading Systems</h4></li><li><h4 id="Communication-Gateway-In-x2F-Out"><a href="#Communication-Gateway-In-x2F-Out" class="headerlink" title="Communication Gateway In&#x2F;Out"></a>Communication Gateway In&#x2F;Out</h4></li><li><h4 id="Pandas-Datareader"><a href="#Pandas-Datareader" class="headerlink" title="Pandas Datareader"></a>Pandas Datareader</h4><ul><li><p><strong>Strength:</strong> Automatically fetch the latest finance data instead of downloading csv files from websites and loading into ide again and again.</p></li><li><p><strong>Usage:</strong></p><ul><li><p>Install pandas_datareader package and import it.</p></li><li><p>Choose an api that it provide.</p></li><li><p>Define the ticker, start date, end date and data intervals(if needed) as parameters.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas_datareader <span class="keyword">as</span> pdr</span><br><span class="line"><span class="keyword">import</span> datatime <span class="keyword">as</span> dt</span><br><span class="line"></span><br><span class="line">ticker = <span class="string">&#x27;AAPL&#x27;</span></span><br><span class="line">start = dt.datetime(<span class="number">2019</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">end = dt.datetime(<span class="number">2023</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">data = pdr.get_data_yahoo(ticker, start, end)</span><br><span class="line">data.head()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Calculate moving average with a defined time window</span></span><br><span class="line">ma = <span class="number">50</span></span><br><span class="line">smaString = <span class="string">&#x27;Sma_&#x27;</span>+<span class="built_in">str</span>(ma)</span><br><span class="line">df[smaString] = data.iloc[:, <span class="number">4</span>].rolling(window = ma).mean()</span><br><span class="line"><span class="comment"># Cut out the first 50 days&#x27; data that without an ma50 value</span></span><br><span class="line">df = df.iloc[ma:]</span><br></pre></td></tr></table></figure></li></ul></li><li><p><strong>Questions:</strong></p><ul><li>What does yfinance package do, is it still useful if already have pdr?</li><li>What is ‘Adj Close’ value mean?</li></ul></li></ul></li></ul><p>​</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MSCA 32019 Week 1</title>
       <link href="/2023/04/10/Week1%20-%20Python%20Review/"/>
       <url>/2023/04/10/Week1%20-%20Python%20Review/</url>
