@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2023/04/17/%E7%AC%AC6%E6%9D%A1%E3%80%80%E6%8A%8A%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9B%B4%E6%8E%A5%E6%8B%86%E5%88%86%E5%88%B0%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E9%87%8C%EF%BC%8C%E4%B8%8D%E8%A6%81%E4%B8%93%E9%97%A8%E9%80%9A%E8%BF%87%E4%B8%8B%E6%A0%87%E8%AE%BF%E9%97%AE/"/>
+      <url>/2023/04/17/%E7%AC%AC6%E6%9D%A1%E3%80%80%E6%8A%8A%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9B%B4%E6%8E%A5%E6%8B%86%E5%88%86%E5%88%B0%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E9%87%8C%EF%BC%8C%E4%B8%8D%E8%A6%81%E4%B8%93%E9%97%A8%E9%80%9A%E8%BF%87%E4%B8%8B%E6%A0%87%E8%AE%BF%E9%97%AE/</url>
+      
+        <content type="html"><![CDATA[<h2 id="第6条-把数据结构直接拆分到多个变量里，不要专门通过下标访问"><a href="#第6条-把数据结构直接拆分到多个变量里，不要专门通过下标访问" class="headerlink" title="第6条　把数据结构直接拆分到多个变量里，不要专门通过下标访问"></a>第6条　把数据结构直接拆分到多个变量里，不要专门通过下标访问</h2><blockquote><p><strong>要点：</strong></p><ol><li><strong>unpacking是一种特殊的Python语法，只需要一行代码，就能把数据结构里面的多个值分别赋给相应的变量。</strong></li><li><strong>凡是可迭代的对象都能unpacking，无论它里面还有多少层迭代结构。</strong></li><li><strong>尽量通过unpacking来拆解序列之中的数据，而不要通过下标访问，这样可以让代码更简洁、更清晰</strong>。</li></ol></blockquote><h4 id="用法一：通过unpacking来赋值要比通过下标去访问元组内的元素更清晰，而且这种写法所需的代码量通常比较少。"><a href="#用法一：通过unpacking来赋值要比通过下标去访问元组内的元素更清晰，而且这种写法所需的代码量通常比较少。" class="headerlink" title="用法一：通过unpacking来赋值要比通过下标去访问元组内的元素更清晰，而且这种写法所需的代码量通常比较少。"></a>用法一：通过unpacking来赋值要比通过下标去访问元组内的元素更清晰，而且这种写法所需的代码量通常比较少。</h4><p><img src="C:\Users\fm980\AppData\Roaming\Typora\typora-user-images\image-20230417094703937.png" alt="image-20230417094703937"></p><p><strong><font color=red><em>元组的元素本身不能修改，但是可以通过unpacking把这些元素分别赋给相应的变量，那些变量是可以修改的。</em></font></strong></p><h4 id="用法二：通过unpacking原地交换两个变量，而不用专门创建临时变量。"><a href="#用法二：通过unpacking原地交换两个变量，而不用专门创建临时变量。" class="headerlink" title="用法二：通过unpacking原地交换两个变量，而不用专门创建临时变量。"></a>用法二：通过unpacking原地交换两个变量，而不用专门创建临时变量。</h4><p><img src="C:\Users\fm980\AppData\Roaming\Typora\typora-user-images\image-20230417095021000.png" alt="image-20230417095021000"></p><p><strong><font color='red'><em>这样写为什么可以成立呢？因为Python处理赋值操作的时候，要先对&#x3D;号右侧求值，于是，它会新建一个临时的元组，把a[i]与a[i-1]这两个元素放到这个元组里面。例如，头一次进入内部的for循环时，这两个元素分别是’carrots’与’pretzels’，于是，系统就会创建出(‘carrots’, ‘pretzels’)这样一个临时的元组。然后，Python会对这个临时的元组做unpacking，把它里面的两个元素分别放到&#x3D;号左侧的那两个地方，于是，’carrots’就会把a[i-1]里面原有的’pretzels’换掉，’pretzels’也会把a[i]里面原有的’carrots’换掉。现在，出现在a[0]这个位置上面的字符串就是’carrots’了，出现在a[1]这个位置上面的字符串则是’pretzels’。做完unpacking后，系统会扔掉这个临时的元组。</em></font></strong></p><h4 id="用法三：在for循环或者类似的结构（例如推导与生成表达式，这些内容参见第27条）里面，把复杂的数据拆分到相关的变量之中。"><a href="#用法三：在for循环或者类似的结构（例如推导与生成表达式，这些内容参见第27条）里面，把复杂的数据拆分到相关的变量之中。" class="headerlink" title="用法三：在for循环或者类似的结构（例如推导与生成表达式，这些内容参见第27条）里面，把复杂的数据拆分到相关的变量之中。"></a>用法三：在for循环或者类似的结构（例如推导与生成表达式，这些内容参见第27条）里面，把复杂的数据拆分到相关的变量之中。</h4><ul><li><p>传统写法迭代snacks：</p><p><img src="C:\Users\fm980\AppData\Roaming\Typora\typora-user-images\image-20230417095518847.png" alt="image-20230417095518847"></p></li><li><p>Pythonic式的写法：</p><p>首先调用内置的enumerate函数（参见第7条）获得当前要迭代的元组，然后针对这个元组做unpacking，这样就可以直接得到具体的name与calories值了。</p><p><img src="C:\Users\fm980\AppData\Roaming\Typora\typora-user-images\image-20230417095650176.png" alt="image-20230417095650176"></p></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Category</title>
       <link href="/2023/04/14/category/"/>
       <url>/2023/04/14/category/</url>
